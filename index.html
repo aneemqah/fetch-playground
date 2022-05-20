@@ -10,6 +10,18 @@
     <button id="get-text">Get Text</button>
     <button id="get-superheroes">Get JSON</button>
     <button id="get-posts">Get API data</button>
+    <hr>
+    <form id='add-post'>
+        <div>
+            <input type='text' id='title' placeholder='Title'>
+        </div>
+        <div>
+            <textarea id="body" placeholder='Body'></textarea>
+        </div>
+        <div>
+            <input type='submit' value='Submit'></input>
+        </div>
+    </form>
     <div id="output"></div>
     <script>
       document.getElementById('get-text').addEventListener('click', getText);
