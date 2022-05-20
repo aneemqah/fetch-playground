@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Catwoman",
+    "email": "catwoman@marvel.com"
+  },
+  {
+    "id": 2,
+    "name": "Batman",
+    "email": "batman@marvel.com"
+  },
+  {
+    "id": 3,
+    "name": "Wonder women ",
+    "email": "ww@marvel.com"
+  }
+]
