@@ -8,9 +8,13 @@
   </head>
   <body>
     <button id="get-text">Get Text</button>
+    <button id="get-superheroes">Get Superheroes</button>
     <div id="output"></div>
     <script>
       document.getElementById('get-text').addEventListener('click', getText);
+      document
+        .getElementById('get-superheroes')
+        .addEventListener('click', getSuperheroes);
       function getText() {
         fetch('sample.txt')
           .then((res) => {
@@ -21,6 +25,26 @@
             document.getElementById('output').innerHTML = data;
           })
           .catch((err) => console.log(err));
+      }
+      function getSuperheroes() {
+        fetch('superheroes.json')
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            let output = `<h2>Superheroes</h2>`;
+            data.forEach((hero) => {
+              output += `
+                <ul>
+                    <li>ID: ${hero.id}</li>
+                    <li>Name: ${hero.name}</li>
+                    <li>Email: ${hero.email}</li>
+                </ul>
+                `;
+            });
+            document.getElementById('output').innerHTML = output;
+          });
       }
     </script>
   </body>
