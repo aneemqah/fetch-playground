@@ -23,12 +23,14 @@
         </div>
     </form>
     <div id="output"></div>
+
     <script>
       document.getElementById('get-text').addEventListener('click', getText);
-      document
-        .getElementById('get-superheroes')
-        .addEventListener('click', getSuperheroes);
+      document.getElementById('get-superheroes').addEventListener('click', getSuperheroes);
       document.getElementById('get-posts').addEventListener('click', getPosts);
+      document.getElementById('add-post').addEventListener('click', addPost);
+
+      // Gets data from text file
       function getText() {
         fetch('sample.txt')
           .then((res) => {
@@ -40,6 +42,8 @@
           })
           .catch((err) => console.log(err));
       }
+
+      // Gets data from JSON file
       function getSuperheroes() {
         fetch('superheroes.json')
           .then((res) => {
@@ -61,6 +65,7 @@
           });
       }
 
+     // Gets data from API 
       function getPosts() {
         fetch('https://jsonplaceholder.typicode.com/posts')
           .then((res) => {
@@ -79,6 +84,25 @@
             document.getElementById('output').innerHTML = output;
           });
       }
+
+
+    function addPost(e) {
+        e.preventDefault(); // prevent submitting
+        // get the values from the title and body form fields
+        let title = document.getElementById('title').value;
+        let body = document.getElementById('body').value;
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+             method: 'POST', 
+             headers: {
+                'Accept': 'application/json, text/plain, */*', 
+                'Content-type': 'application/json'
+             },
+             body:JSON.stringify({title: title, body:body})// convert to a string before sending data back
+          })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+       }
     </script>
   </body>
 </html>
