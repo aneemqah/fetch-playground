@@ -57,13 +57,13 @@
           })
           .then((data) => {
             console.log(data);
-            let output = `<h2>Superheroes</h2>`;
+            let output = `<h2 class="mb-4">Superheroes</h2>`;
             data.forEach((hero) => {
               output += `
-                <ul>
-                    <li>ID: ${hero.id}</li>
-                    <li>Name: ${hero.name}</li>
-                    <li>Email: ${hero.email}</li>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">ID: ${hero.id}</li>
+                    <li class="list-group-item">Name: ${hero.name}</li>
+                    <li class="list-group-item">Email: ${hero.email}</li>
                 </ul>
                 `;
             });
@@ -79,10 +79,10 @@
           })
           .then((data) => {
             console.log(data);
-            let output = `<h2>Posts</h2>`;
+            let output = `<h2 class="mb-4">Posts</h2>`;
             data.forEach((post) => {
               output += `
-                    <div>
+                    <div class="card card-body mb-3">
                         <h3>${post.title}</h3>
                         <p>${post.body}<p>
                     </div> `;
