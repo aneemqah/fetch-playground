@@ -2,6 +2,8 @@
 
 A a small application built with HTML and Javascript that uses the Fetch API to get and display data from different sources. The external API used is the JSONPlaceholder API.
 
+https://my-fetch-playground.netlify.app/
+
 ### To run app locally
 
 Use Live Server to run the app.
